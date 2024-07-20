@@ -22,11 +22,11 @@ export default function RootLayout({
       style={{ colorScheme: "light" }}
       suppressHydrationWarning
     >
-      <body className="bg-background text-foreground">
+      <body className="w-full bg-background text-foreground">
         <ThemeProvider>
-          <main className="mx-auto flex min-h-screen w-screen max-w-[2200px] flex-col items-center overflow-hidden">
+          <main className="flex min-h-screen w-auto max-w-[1660px] flex-col items-center overflow-hidden">
             {children}
-            <NavDrawer />
+            {/* <NavDrawer /> */}
           </main>
         </ThemeProvider>
       </body>

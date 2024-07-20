@@ -36,7 +36,12 @@ module.exports = {
           background: "hsl(var(--btn-background))",
           "background-hover": "hsl(var(--btn-background-hover))",
         },
-        white: "var(--novel-white)",
+        white: "#FFFFFF",
+        corange: "#F17228",
+        cyellow: "#FECB10",
+        cgrey: "#757575",
+        cblack: "#424242",
+        cgreen: "#79B93B",
         stone: {
           50: "var(--novel-stone-50)",
           100: "var(--novel-stone-100)",
