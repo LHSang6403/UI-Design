@@ -3,8 +3,6 @@ import Footer from "@components/Layout/Footer/Footer";
 import HomeSlider from "@components/Sliders/HomeSlider";
 import Template from "@app/(main)/template";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import Slide from "@/components/HomePageComponents/Slide";
 import Sales from "@/components/HomePageComponents/Sales";
 import Work from "@/components/HomePageComponents/Work";
