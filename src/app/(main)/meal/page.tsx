@@ -24,7 +24,8 @@ export default function Meal() {
                     </BreadcrumbList>
                 </Breadcrumb>
             </div>
-            <FoodSlider title="Delicious food near you" Foods={FoodData}></FoodSlider>
+            <FoodSlider carousel={true} title="Delicious food near you" Foods={FoodData}></FoodSlider>
+            <FoodSlider carousel={false} title="Foods at 227 Nguyen Van Cu, District 5, Ho Chi Minh City" Foods={FoodData}></FoodSlider>
         </main>
         </>
     );
