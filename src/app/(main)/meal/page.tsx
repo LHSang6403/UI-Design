@@ -1,5 +1,6 @@
 import RecommendBar from "@/components/MealPageComponent/RecommendBar";
 import SearchBar from "@/components/Search/SearchBar";
+import FoodSlider from "@/components/Sliders/FoodSlider/FoodSlider";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export default function Meal() {
@@ -23,7 +24,59 @@ export default function Meal() {
                     </BreadcrumbList>
                 </Breadcrumb>
             </div>
+            <FoodSlider title="Delicious food near you" Foods={FoodData}></FoodSlider>
         </main>
         </>
     );
 }
+const FoodData: Food[] = [
+    {
+        id: '1',
+        name: 'Cheese Burger',
+        image: '/assets/home/food1.png',
+        location: 'Toffe\'s Cafe',
+        price: 3.88
+    },
+    {
+        id: '2',
+        name: 'Cheese Burger',
+        image: '/assets/home/food1.png',
+        location: 'Toffe\'s Cafe',
+        price: 3.88
+    },
+    {
+        id: '3',
+        name: 'Cheese Burger',
+        image: '/assets/home/food1.png',
+        location: 'Toffe\'s Cafe',
+        price: 3.88
+    },
+    {
+        id: '4',
+        name: 'Cheese Burger',
+        image: '/assets/home/food1.png',
+        location: 'Toffe\'s Cafe',
+        price: 3.88
+    },
+    {
+        id: '5',
+        name: 'Cheese Burger',
+        image: '/assets/home/food1.png',
+        location: 'Toffe\'s Cafe',
+        price: 3.88
+    },
+    {
+        id: '6',
+        name: 'Cheese Burger',
+        image: '/assets/home/food1.png',
+        location: 'Toffe\'s Cafe',
+        price: 3.88
+    },    
+    {
+        id: '7',
+        name: 'Cheese Burger',
+        image: '/assets/home/food1.png',
+        location: 'Toffe\'s Cafe',
+        price: 3.88
+    }
+]
