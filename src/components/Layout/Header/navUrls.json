@@ -5,8 +5,8 @@
     "permission": ""
   },
   {
-    "name": "Write",
-    "url": "/write",
+    "name": "Meal",
+    "url": "/meal",
     "permission": ""
   },
   {
