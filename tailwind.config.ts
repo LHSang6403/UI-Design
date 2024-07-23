@@ -19,6 +19,8 @@ const config: Config = {
     },
     extend: {
       colors: {
+        'gradient-button-from': '#FFB800',
+        'gradient-button-to': '#FF8A00',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
