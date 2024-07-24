@@ -2,10 +2,9 @@
 import SearchBar from "@/components/Search/SearchBar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import useHistory from "@/zustand/useHistory";
+import useHistory, { ProgressState } from "@/zustand/useHistory";
 import Image from "next/image";
 import Link from "next/link";
-import { array } from "zod";
 export default function Delivery() {
     return (
         <div className="min-h-screen-w-full m-10 items-center flex flex-col">
@@ -44,7 +43,7 @@ function History() {
             deliveryDateTime: 'Feb 20, 2022 12:30 PM',
             estimatedTotal: 25.00,
             address: '227 Nguyen Van Cu, District 5, Ho Chi Minh City',
-            status: 'Delivered',
+            status: 'inConfirm' as ProgressState,
             driver: {
                 name: 'John Doe',
                 phone: '0123456789'
@@ -85,7 +84,7 @@ function History() {
             deliveryDateTime: 'Feb 20, 2022 12:30 PM',
             estimatedTotal: 25.00,
             address: '227 Nguyen Van Cu, District 5, Ho Chi Minh City',
-            status: 'Delivered',
+            status: 'inProgress' as ProgressState,
             driver: {
                 name: 'John Doe',
                 phone: '0123456789'
@@ -126,7 +125,7 @@ function History() {
             deliveryDateTime: 'Feb 20, 2022 12:30 PM',
             estimatedTotal: 25.00,
             address: '227 Nguyen Van Cu, District 5, Ho Chi Minh City',
-            status: 'Delivered',
+            status: 'delivered' as ProgressState,
             driver: {
                 name: 'John Doe',
                 phone: '0123456789'
@@ -168,7 +167,7 @@ function History() {
             deliveryDateTime: 'Feb 20, 2022 12:30 PM',
             estimatedTotal: 25.00,
             address: '227 Nguyen Van Cu, District 5, Ho Chi Minh City',
-            status: 'Delivered',
+            status: 'delivered' as ProgressState,
             driver: {
                 name: 'John Doe',
                 phone: '0123456789'
@@ -209,7 +208,7 @@ function History() {
             deliveryDateTime: 'Feb 20, 2022 12:30 PM',
             estimatedTotal: 25.00,
             address: '227 Nguyen Van Cu, District 5, Ho Chi Minh City',
-            status: 'Delivered',
+            status: 'delivered' as ProgressState,
             driver: {
                 name: 'John Doe',
                 phone: '0123456789'
@@ -249,7 +248,7 @@ function History() {
             deliveryDateTime: 'Feb 20, 2022 12:30 PM',
             estimatedTotal: 25.00,
             address: '227 Nguyen Van Cu, District 5, Ho Chi Minh City',
-            status: 'Delivered',
+            status: 'delivered' as ProgressState,
             driver: {
                 name: 'John Doe',
                 phone: '0123456789'
@@ -289,7 +288,7 @@ function History() {
             deliveryDateTime: 'Feb 20, 2022 12:30 PM',
             estimatedTotal: 25.00,
             address: '227 Nguyen Van Cu, District 5, Ho Chi Minh City',
-            status: 'Delivered',
+            status: 'delivered' as ProgressState,
             driver: {
                 name: 'John Doe',
                 phone: '0123456789'
@@ -329,7 +328,7 @@ function History() {
             deliveryDateTime: 'Feb 20, 2022 12:30 PM',
             estimatedTotal: 25.00,
             address: '227 Nguyen Van Cu, District 5, Ho Chi Minh City',
-            status: 'Delivered',
+            status: 'delivered' as ProgressState,
             driver: {
                 name: 'John Doe',
                 phone: '0123456789'
@@ -369,7 +368,7 @@ function History() {
             deliveryDateTime: 'Feb 20, 2022 12:30 PM',
             estimatedTotal: 25.00,
             address: '227 Nguyen Van Cu, District 5, Ho Chi Minh City',
-            status: 'Delivered',
+            status: 'delivered' as ProgressState,
             driver: {
                 name: 'John Doe',
                 phone: '0123456789'
@@ -390,11 +389,19 @@ function History() {
     return (
         <div className="w-full grid grid-cols-3 lg:grid-cols-2 md:grid-cols-1 place-content-around gap-10 my-10">
             {
-                FoodHistory.map((item) => (
-                    <Link href={`/delivery/${item.id}`} passHref onClick={() => setItem(item)}>
-                        <CardItem key={item.id} item={item} />
-                    </Link>
-                ))
+                FoodHistory.map((item) => {
+                    const status = item.status;
+                    item = {
+                        ...item,
+                        status: status as ProgressState
+                    }
+
+                    return (
+                        <Link href={`/delivery/${item.id}`} passHref onClick={() => setItem(item)}>
+                            <CardItem key={item.id} item={item} />
+                        </Link>
+                    )
+                })
             }
         </div>
     )
@@ -402,12 +409,17 @@ function History() {
 
 function CardItem({ item }: { item: any }) {
     const length = item.items.length;
-    console.log(length);
     return (
         <Card className="flex flex-col drop-shadow-lg shadow-yellow-300 border border-yellow-400 bg-white py-4 px-6">
-            <div className="flex flex-row">
-                <Image src="/assets/delivery/delivery_item_main.png" width={100} height={100} className="object-cover rounded-md" alt="Delivery Item" />
-                <div className="w-full h-fitflex flex-col pl-4 flex-grow">
+            <div className="flex flex-row h-fit w-fit">
+                <div className="relative w-[165px] h-[32px] lg:w-[195px] lg:h-[40px]">
+                    <Image width={100}
+                        height={100}
+                        src="/assets/delivery/delivery_item_main.png"
+                        // className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 h-full md:h-1/2 lg:h-1/3 xl:h-1/4"
+                        alt="Delivery Item" />
+                </div>
+                <div className="w-full h-fit flex flex-col pl-4 flex-grow">
                     <CardHeader className="p-0">
                         <CardDescription className="text-grat-500 text-base">Order #{item.id}</CardDescription>
                         <CardTitle className="text-black text-xl font-semibold">{item.name}</CardTitle>
@@ -421,11 +433,9 @@ function CardItem({ item }: { item: any }) {
                             }
                         </CardDescription>
                     </CardHeader>
-                    <CardContent className="p-0 mt-2 flex-grow">
-                    </CardContent>
                 </div>
             </div>
-            <CardFooter className="flex justify-start p-0 m-0 pt-3 bg-gray-50">
+            <CardFooter className="flex justify-start bg-gray-50 p-0 m-0 pt-3 lg:pt-2">
                 <Button className="bg-yellow-400 text-black hover:bg-yellow-500 mr-4 rounded-full">Eat Clean</Button>
                 <Button className="bg-yellow-400 text-black hover:bg-yellow-500 rounded-full">Vegetarian</Button>
             </CardFooter>

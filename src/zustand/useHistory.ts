@@ -1,5 +1,11 @@
 import { create } from "zustand";
 
+export type ProgressState =
+  | "delivered"
+  | "inConfirm"
+  | "inProgress"
+  | "cancelled";
+
 interface HistoryProps {
   item: {
     id: string;
@@ -19,7 +25,7 @@ interface HistoryProps {
     deliveryDateTime: string;
     estimatedTotal: number;
     address: string;
-    status: string;
+    status: ProgressState;
     driver: {
       name: string;
       phone: string;
@@ -48,7 +54,7 @@ const useHistory = create<HistoryProps>((set) => ({
     deliveryDateTime: "",
     estimatedTotal: 0,
     address: "",
-    status: "",
+    status: <ProgressState>"delivered",
     driver: {
       name: "",
       phone: "",
