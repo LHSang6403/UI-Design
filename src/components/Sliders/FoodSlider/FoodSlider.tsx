@@ -4,12 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function FoodSlider({title, Foods, carousel}: {title: string, Foods: Food[], carousel: boolean}) {
   return (
-    <div className="px-48">
+    <div className="px-48 w-full">
       <h1 className="mx-auto mb-10 text-start text-3xl font-bold">
         {title}
       </h1>
       { !carousel ? (
-        <div className="grid grid-cols-5 gap-4 lg:grid-cols-2">
+        <div className="grid grid-cols-5 gap-4">
            {Foods.map((food, index) => (
             <Item key={index}
             img={food.image}
