@@ -12,11 +12,24 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Template from "@app/(main)/template";
+import Dialog from "@/components/Modal/ShoppingModal";
 
 export default function Meal() {
+    async function onClose() {
+        "use server"
+        console.log("Modal has closed")
+    }
+
+    async function onOk() {
+        "use server"
+        console.log("Ok was clicked")
+    }
     return (
         <>
             <Template>
+            <Dialog title="Example Modal" onClose={onClose} onOk={onOk}>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eligendi odio ipsa nostrum dolores voluptas architecto tempore nulla voluptatibus vel, placeat explicabo exercitationem id officia laborum doloremque blanditiis earum accusamus.</p>
+            </Dialog>
                 <main className="min-h-screen-w-full flex flex-col items-center gap-4">
                     <div className="my-5 w-full px-48">
                         <SearchBar></SearchBar>
