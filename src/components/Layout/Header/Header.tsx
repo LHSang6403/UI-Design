@@ -8,23 +8,23 @@ import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 import Image from "next/image";
 import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useForm } from "react-hook-form";
@@ -33,39 +33,42 @@ import { z } from "zod";
 import React from "react";
 import { OrangeButton } from "@/components/ReuseableMaterials/OrangeButton";
 import FoodDialog from "@/components/FoodCart/FoodDialog";
+import Search from "./Search";
 const FormSchema = z.object({
-    type: z.enum(["all", "mentions", "none"], {
-        required_error: "You need to select a notification type.",
-    }),
+  type: z.enum(["all", "mentions", "none"], {
+    required_error: "You need to select a notification type.",
+  }),
 });
 
 export default function Header() {
-    const [count, setCount] = React.useState<number>(0);
+  const [count, setCount] = React.useState<number>(0);
 
-    const inc = () => {
-        setCount(count + 1);
-    };
+  const inc = () => {
+    setCount(count + 1);
+  };
 
-    const dec = () => {
-        setCount(count - 1);
-    };
-    return (
-        <div className="flex h-16 w-full flex-row justify-around gap-3 px-10 xl:justify-between sm:px-4">
-            <div className="mr-4 flex items-center">
-                <PrimaryLogo />
-            </div>
-            <nav className="flex w-full max-w-[1300px] flex-row items-center justify-around gap-6 xl:hidden">
-                <div className="w-full"></div>
-                <NavBar />
-                <div className="w-full">
-                    <SearchBar />
-                </div>
-            </nav>
-            <div className="flex items-center gap-2">
-                <FoodDialog count={count} onIncrement={inc} onDecrement={dec} />
-                <ThemeButton />
-                <Dropdown />
-            </div>
+  const dec = () => {
+    setCount(count - 1);
+  };
+  return (
+    <div className="flex h-16 w-full flex-row justify-around gap-3 px-4 xl:justify-between">
+      <div className="flex items-center">
+        <PrimaryLogo />
+      </div>
+      <nav className="flex w-full max-w-[1300px] flex-row items-center justify-around gap-6 xl:hidden">
+        <div className="mt-0.5 w-full text-sm">
+          <span className="font-medium text-corange">Deliver to:</span>{" "}
+          <span className="font-normal">
+            Current location 227 Nguyen Van Cu, D5, HCMC
+          </span>
         </div>
-    );
+        <NavBar />
+      </nav>
+      <div className="flex items-center gap-2">
+        <Search />
+        <FoodDialog count={count} onIncrement={inc} onDecrement={dec} />
+        <Dropdown />
+      </div>
+    </div>
+  );
 }

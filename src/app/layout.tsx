@@ -24,7 +24,7 @@ export default function RootLayout({
     >
       <body className="w-full bg-background text-foreground">
         <ThemeProvider>
-          <main className="flex min-h-screen w-auto max-w-[1660px] flex-col items-center overflow-hidden">
+          <main className="mx-auto flex min-h-screen w-auto max-w-[1660px] flex-col items-center overflow-hidden">
             {children}
             {/* <NavDrawer /> */}
           </main>
