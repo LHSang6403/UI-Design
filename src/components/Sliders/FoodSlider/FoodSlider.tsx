@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function FoodSlider({title, Foods, carousel}: {title: string, Foods: Food[], carousel: boolean}) {
   return (
-    <div className="px-48 w-full">
+    <div className="px-48 w-full mt-5">
       <h1 className="mx-auto mb-10 text-start text-3xl font-bold">
         {title}
       </h1>
