@@ -65,7 +65,7 @@ export default function MealsOfTheDay() {
           isOpen={true}
         />
       </div>
-      <Button className="mx-auto mt-10 rounded-lg bg-gradient-to-l from-[#FFB624] to-[#FF9F11] px-6 text-white">
+      <Button className="mx-auto mt-10 rounded-lg bg-gradient-to-l from-[#FFB624] to-[#FF9F11] px-6 text-white shadow-md">
         View all
       </Button>
     </div>
