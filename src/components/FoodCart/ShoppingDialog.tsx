@@ -208,7 +208,7 @@ const ShoppingCartDialog: React.FC<ShoppingCartDialogProps> = ({
                     </div>
                     <OrangeButton
                         className="w-full"
-                        onClick={() => (window.location.href = "/cart")}
+                        onClick={() => (window.location.href = "/checkout")}
                     >
                         Cart Checkout
                     </OrangeButton>
