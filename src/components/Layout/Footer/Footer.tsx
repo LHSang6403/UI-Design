@@ -2,75 +2,86 @@ import SecondaryLogo from "@/components/SecondaryLogo";
 
 export default function Footer() {
   return (
-    <footer className="w-full h-72 xl:h-fit xl:mb-8 border-t border-t-foreground/10 p-8 sm:px-4 flex flex-col justify-center text-center gap-6 text-xs">
-      <div className="flex justify-center items-center">
-        <SecondaryLogo />
+    <footer className="flex h-fit w-full flex-col justify-center gap-6 py-8 text-xs xl:mb-8 xl:h-fit sm:px-4">
+      <div className="flex w-full flex-col text-sm">
+        <h3 className="font-medium">Our cooks are from</h3>
+        <div className="flex flex-row justify-between">
+          <div className="flex flex-col items-start text-sm font-light">
+            <p>Ha Noi</p>
+            <p>Ho Chi Minh</p>
+            <p>Da Nang</p>
+            <p>Can Tho</p>
+            <p>Quang Ninh</p>
+          </div>
+          <div className="flex flex-col items-start text-sm font-light">
+            <p>Ha Noi</p>
+            <p>Ho Chi Minh</p>
+            <p>Da Nang</p>
+            <p>Can Tho</p>
+            <p>Quang Ninh</p>
+          </div>
+          <div className="flex flex-col items-start text-sm font-light">
+            <p>Ha Noi</p>
+            <p>Ho Chi Minh</p>
+            <p>Da Nang</p>
+            <p>Can Tho</p>
+            <p>Quang Ninh</p>
+          </div>
+          <div className="flex flex-col items-start text-sm font-light">
+            <p>Ha Noi</p>
+            <p>Ho Chi Minh</p>
+            <p>Da Nang</p>
+            <p>Can Tho</p>
+            <p>Quang Ninh</p>
+          </div>
+          <div className="flex flex-col items-start text-sm font-light">
+            <p>Ha Noi</p>
+            <p>Ho Chi Minh</p>
+            <p>Da Nang</p>
+            <p>Can Tho</p>
+            <p>Quang Ninh</p>
+          </div>
+        </div>
       </div>
-      <p>
-        Powered by{" "}
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          className="font-bold hover:underline"
-          rel="noreferrer"
-        >
-          Supabase
-        </a>
-      </p>
-      <p className="max-w-[80%] sm:max-w-full mx-auto text-justify">
-        Introducing our versatile Next.js web project template! Our Next.js web
-        project template is designed to streamline the development process for
-        your web projects. Built on top of Next.js, a powerful React framework,
-        our template provides a solid foundation for creating modern and
-        scalable web applications. Here are some key features of our template:
-        1. Next.js Framework: Benefit from the capabilities of Next.js,
-        including server-side rendering, automatic code splitting, and easy
-        routing, to build fast and SEO-friendly web applications. 2. React
-        Components: Leverage the power of React to create reusable UI
-        components, making your codebase more modular and maintainable.
-      </p>
-      <nav className="w-[80%] mx-auto flex flex-row justify-around sm:grid sm:grid-cols-2 sm:gap-3">
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          className="hover:underline border px-2 py-2 border-foreground/5 rounded-md"
-          rel="noreferrer"
-        >
-          Supabase
-        </a>
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          className="hover:underline border px-2 py-2 border-foreground/5 rounded-md"
-          rel="noreferrer"
-        >
-          Supabase
-        </a>
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          className="hover:underline border px-2 py-2 border-foreground/5 rounded-md"
-          rel="noreferrer"
-        >
-          Supabase
-        </a>
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          className="hover:underline border px-2 py-2 border-foreground/5 rounded-md"
-          rel="noreferrer"
-        >
-          Supabase
-        </a>
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          className="hover:underline border px-2 py-2 border-foreground/5 rounded-md"
-          rel="noreferrer"
-        >
-          Supabase
-        </a>
-      </nav>
+      <hr className="my-2 h-0.5 w-full bg-[#424242]"></hr>
+      <div>
+        <div className="flex w-1/2 flex-row justify-between">
+          <div className="text-sm">
+            <h3 className="font-medium">Company</h3>
+            <div className="flex flex-col items-start text-sm font-light">
+              <p>About us</p>
+              <p>Team</p>
+              <p>Careers</p>
+              <p>Blog</p>
+            </div>
+          </div>
+          <div className="text-sm">
+            <h3 className="font-medium">Contact</h3>
+            <div className="flex flex-col items-start text-sm font-light">
+              <p>Help & Support</p>
+              <p>Partner with us</p>
+              <p>Ride with us</p>
+            </div>
+          </div>
+          <div className="text-sm">
+            <h3 className="font-medium">Legal</h3>
+            <div className="flex flex-col items-start text-sm font-light">
+              <p>Terms & Conditions</p>
+              <p>Refund & Cancellation</p>
+              <p>Privacy Policy</p>
+              <p>Cookie Policy</p>
+            </div>
+          </div>
+        </div>
+        <div className="">
+          <p>FOLLOW US</p>
+        </div>
+      </div>
+      <hr className="my-2 h-0.5 w-full bg-[#424242]"></hr>
+      <div className="flex flex-row justify-between">
+        <p>All rights Reserved</p>
+        <p>Made by HOMECUISINE</p>
+      </div>
     </footer>
   );
 }

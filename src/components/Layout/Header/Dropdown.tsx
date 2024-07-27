@@ -14,8 +14,11 @@ export default function Dropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="h-8 px-2" variant="outline">
-          Menu
+        <Button
+          className="h-8 border-none px-2 text-corange shadow-md"
+          variant="ghost"
+        >
+          Login
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mx-3 w-56 bg-background">

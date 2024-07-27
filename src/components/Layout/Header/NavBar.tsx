@@ -13,7 +13,7 @@ import navUrls from "./navUrls.json";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
-export default function NavBar() {
+export default function  NavBar() {
   const path = usePathname();
 
   return (

@@ -13,10 +13,5 @@
     "name": "Delivery",
     "url": "/delivery",
     "permission": ""
-  },
-  {
-    "name": "Dashboard",
-    "url": "/dashboard",
-    "permission": ""
   }
 ]

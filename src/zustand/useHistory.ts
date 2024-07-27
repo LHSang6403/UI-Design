@@ -25,7 +25,7 @@ interface HistoryProps {
     deliveryDateTime: string;
     estimatedTotal: number;
     address: string;
-    status: ProgressState;
+    status: string;
     driver: {
       name: string;
       phone: string;
