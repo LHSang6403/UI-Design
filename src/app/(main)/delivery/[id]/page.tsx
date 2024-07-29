@@ -4,7 +4,8 @@ import SearchBar from "@/components/Search/SearchBar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import useHistory from "@/zustand/useHistory";
-import { MapPin, MoveUpRight, Truck } from "lucide-react";
+import { set } from "date-fns";
+import { ChevronLeft, MapPin, MoveUpRight, Truck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -260,8 +261,11 @@ function Tracking({
           objectFit="cover"
         />
       </div>
-      <Button className="absolute bottom-0 left-0 right-0 m-auto w-fit rounded-md bg-gradient-to-r from-amber-300 from-0% to-amber-500 to-100% text-base text-black shadow-yellow-400 drop-shadow-lg">
-        See more
+      <Button
+        className="absolute bottom-5 left-0 right-0 m-auto w-fit rounded-md bg-gradient-to-r from-amber-300 from-0% to-amber-500 to-100% text-base text-black shadow-yellow-400 drop-shadow-lg"
+        onClick={() => setIsTracking(false)}
+      >
+        <p className="text-sm">Back to Order</p>
       </Button>
     </>
   );
@@ -283,11 +287,8 @@ function OrderDetail({
         <p className="text-sm text-amber-600 md:text-xs">Order ID: {item.id}</p>
         <div className="flex flex-row space-x-5">
           {progress === 100 && (
-            <Button
-              className="flex h-fit w-full items-center space-x-2 rounded-md bg-gray-500 px-4 py-2 text-white transition-colors hover:bg-gray-600 md:space-x-0 sm:w-auto"
-              onClick={() => setIsTracking(true)}
-            >
-              <span className="text-sm md:hidden">Reorder</span>
+            <Button className="flex h-fit w-full items-center space-x-2 rounded-md bg-gray-500 px-4 py-2 text-white transition-colors hover:bg-gray-600 md:space-x-0 sm:w-auto">
+              <span className="text-sm md:text-xs">Reorder</span>
             </Button>
           )}
           <DropdownMenuCancel />
