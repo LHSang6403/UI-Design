@@ -52,10 +52,10 @@ export default function SearchBar() {
   return (
     <>
       <Input
-        className="h-8 hover:cursor-pointer focus:border-[#E5E7EB] focus:outline-none focus:ring-0 shadow-sm"
+        className="h-8 shadow-sm hover:cursor-pointer focus:border-[#E5E7EB] focus:outline-none focus:ring-0"
         type="text"
         autoComplete="off"
-        placeholder="Tìm kiếm..."
+        placeholder="Searching..."
         onClick={() => setOpen(true)}
       />
       <CommandDialog defaultOpen={false} open={open} onOpenChange={setOpen}>
@@ -66,12 +66,12 @@ export default function SearchBar() {
             autoComplete="off"
             onChange={(e) => setSearchText(e.target.value)}
             className="border-none px-2 focus:outline-none focus:ring-0"
-            placeholder="Nhập tên sản phẩm..."
+            placeholder="Enter item's name..."
           />
         </div>
         <CommandList>
-          <CommandEmpty>Không có kết quả</CommandEmpty>
-          <CommandGroup heading="Gợi ý">
+          <CommandEmpty>No result</CommandEmpty>
+          <CommandGroup heading="Suggestion">
             {matchingKeywords?.length > 0 &&
               matchingKeywords.map((item, index) => (
                 <CommandItem
@@ -92,20 +92,20 @@ export default function SearchBar() {
               <CommandItem
                 onSelect={() => {
                   setOpen(false);
-                  router.push("/cart");
+                  router.push("#");
                 }}
               >
                 <ShoppingCart className="mr-2 h-4 w-4" />
-                <span>Giỏ hàng</span>
+                <span>Cart</span>
               </CommandItem>
               <CommandItem
                 onSelect={() => {
                   setOpen(false);
-                  router.push("/blog");
+                  router.push("#");
                 }}
               >
                 <Newspaper className="mr-2 h-4 w-4" />
-                <span>Tin tức</span>
+                <span>News</span>
               </CommandItem>
             </CommandGroup>
           )}

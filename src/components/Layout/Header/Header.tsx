@@ -34,6 +34,7 @@ import React from "react";
 import { OrangeButton } from "@/components/ReuseableMaterials/OrangeButton";
 import FoodDialog from "@/components/FoodCart/FoodDialog";
 import Search from "./Search";
+
 const FormSchema = z.object({
   type: z.enum(["all", "mentions", "none"], {
     required_error: "You need to select a notification type.",
@@ -51,7 +52,7 @@ export default function Header() {
     setCount(count - 1);
   };
   return (
-    <div className="flex h-16 w-full flex-row justify-around gap-3 px-4 xl:justify-between">
+    <div className="flex h-16 w-full flex-row justify-around gap-3 px-10 xl:justify-between md:px-4">
       <div className="flex items-center">
         <PrimaryLogo />
       </div>
@@ -64,7 +65,7 @@ export default function Header() {
         </div>
         <NavBar />
       </nav>
-      <div className="flex items-center gap-2">
+      <div className="flex flex-row items-center justify-end gap-2">
         <Search />
         <FoodDialog count={count} onIncrement={inc} onDecrement={dec} />
         <Dropdown />

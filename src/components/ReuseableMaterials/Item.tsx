@@ -54,7 +54,9 @@ export default function Item({
           20 minutes
         </p>
       </div>
-      <OrangeButton className="mt-0.5 w-full shadow-md">Order Now</OrangeButton>
+      <OrangeButton className="mt-0.5 h-8 w-full shadow-md">
+        Order Now
+      </OrangeButton>
     </div>
   );
 }

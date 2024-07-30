@@ -13,7 +13,7 @@ import navUrls from "./navUrls.json";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
-export default function  NavBar() {
+export default function NavBar() {
   const path = usePathname();
 
   return (
@@ -27,7 +27,7 @@ export default function  NavBar() {
                 {path === navUrl.url && (
                   <motion.span
                     layoutId="underline"
-                    className="absolute -bottom-1.5 left-0 block h-[4px] w-full bg-foreground"
+                    className="absolute -bottom-1.5 left-0 block h-[4px] w-full bg-corange"
                   />
                 )}
               </NavigationMenuLink>
