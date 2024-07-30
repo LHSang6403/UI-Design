@@ -7,10 +7,10 @@ import Link from "next/link";
 
 export default function Delivery() {
   return (
-    <div className="min-h-screen-w-full mx-10 mt-3 flex flex-col items-center">
+    <div className="min-h-screen-w-full m-10 flex flex-col items-center">
       <SearchBar />
       <History />
-      <Button className="mr-4 h-fit w-fit rounded-md bg-gradient-to-r from-amber-300 from-0% to-amber-500 to-100% text-black shadow-yellow-400 drop-shadow-lg">
+      <Button className="h-fit w-fit rounded-md bg-gradient-to-r from-amber-300 from-0% to-amber-500 to-100% text-base text-black shadow-yellow-400 drop-shadow-lg">
         See more
       </Button>
     </div>
@@ -403,7 +403,7 @@ function History() {
   const { setItem } = useHistory();
 
   return (
-    <div className="my-10 grid w-full grid-cols-3 place-content-around gap-10 lg:grid-cols-2 md:grid-cols-1">
+    <div className="max-w-screen-lg grid w-full grid-cols-4 place-items-center lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 my-10 gap-10 md:gap-5">
       {FoodHistory.map((item) => (
         <Link
           href={`/delivery/${item.id}`}
