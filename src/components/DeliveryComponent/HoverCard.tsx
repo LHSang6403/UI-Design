@@ -23,7 +23,7 @@ export function HoverCardDelivery({ item }: { item: any }) {
           <CardItem item={item} />
         </button>
       </HoverCardTrigger>
-      <HoverCardContent className="justify-left flex w-96 items-end border border-yellow-400 shadow-yellow-300 shadow-lg">
+      <HoverCardContent className="justify-left flex w-96 items-end border border-yellow-400 shadow-lg shadow-yellow-300">
         <div className="flex w-full flex-col justify-between">
           <div className="flex flex-col">
             <span className="text-xl font-bold">{item.name}</span>
@@ -31,8 +31,8 @@ export function HoverCardDelivery({ item }: { item: any }) {
           </div>
           <div className="flex flex-col pb-4">
             {item.items.map((item: any) => (
-              <div className="flex flex-col text-gray-500 w-full pt-2">
-                <div className="flex flex-row justify-between w-full pb-2">
+              <div className="flex w-full flex-col pt-2 text-gray-500">
+                <div className="flex w-full flex-row justify-between pb-2">
                   <span>{item.name} </span>
                   <span>{item.quantity}</span>
                 </div>
@@ -40,13 +40,13 @@ export function HoverCardDelivery({ item }: { item: any }) {
               </div>
             ))}
           </div>
-          <div className="flex flex-col w-full font-bold text-md">
-                <div className="flex flex-row justify-between w-full pb-2">
-                  <span>Total </span>
-                  <span>${item.total}</span>
-                </div>
-                <hr />
-              </div>
+          <div className="text-md flex w-full flex-col font-bold">
+            <div className="flex w-full flex-row justify-between pb-2">
+              <span>Total </span>
+              <span>${item.total}</span>
+            </div>
+            <hr />
+          </div>
           <Button className="flex h-fit w-full items-center rounded-md bg-amber-500 px-4 py-2 text-sm text-white shadow-yellow-400 drop-shadow-lg transition-colors hover:bg-amber-600 sm:w-auto sm:text-base">
             <span className="sm:text-sx text-base md:text-sm">Reorder</span>
           </Button>
@@ -58,26 +58,26 @@ export function HoverCardDelivery({ item }: { item: any }) {
 
 function CardItem({ item }: { item: any }) {
   const length = item.items.length;
-  console.log(length);
   return (
-    <Card className="flex flex-col border border-yellow-400 bg-white px-6 py-4 shadow-yellow-300 drop-shadow-lg">
-      <div className="flex flex-row">
-        <Image
-          src="/assets/delivery/delivery_item_main.png"
-          width={100}
-          height={100}
-          className="rounded-md object-cover"
-          alt="Delivery Item"
-        />
-        <div className="h-fitflex w-full flex-grow flex-col pl-4 text-left">
+    <Card className="flex h-fit w-fit flex-col border border-yellow-400 bg-white px-6 py-4 shadow-yellow-300 drop-shadow-lg">
+      <div className="flex flex-row justify-center items-center">
+        <div className="overflow-hidden rounded-lg">
+          <Image
+            src={"/assets/delivery/delivery_item_main.png"}
+            alt="Delivery Item"
+            width={140}
+            height={140}
+          />
+        </div>
+        <div className="h-fit flex w-full flex-grow flex-col pl-4 text-left">
           <CardHeader className="p-0">
-            <CardDescription className="text-gray-500 text-base">
+            <CardDescription className="text-xs text-gray-500">
               Order #{item.id}
             </CardDescription>
-            <CardTitle className="text-xl font-semibold text-black">
+            <CardTitle className="text-sm font-semibold text-black">
               {item.name}
             </CardTitle>
-            <CardDescription className="space-x-2 text-base text-black">
+            <CardDescription className="space-x-2 text-xs text-black">
               <span>Items:</span>
               {item.items.map((item: any) => (
                 <span className="text-gray-500">
@@ -86,14 +86,13 @@ function CardItem({ item }: { item: any }) {
               ))}
             </CardDescription>
           </CardHeader>
-          <CardContent className="mt-2 flex-grow p-0"></CardContent>
         </div>
       </div>
-      <CardFooter className="m-0 flex justify-start bg-gray-50 p-0 pt-3">
-        <Button className="mr-4 rounded-full bg-yellow-400 text-black hover:bg-yellow-500">
+      <CardFooter className="flex justify-start space-x-2 p-0 pt-2 md:pt-1">
+        <Button className="h-fit rounded-full bg-yellow-400 text-xs text-black hover:bg-yellow-500">
           Eat Clean
         </Button>
-        <Button className="rounded-full bg-yellow-400 text-black hover:bg-yellow-500">
+        <Button className="h-fit rounded-full bg-yellow-400 text-xs text-black hover:bg-yellow-500">
           Vegetarian
         </Button>
       </CardFooter>
