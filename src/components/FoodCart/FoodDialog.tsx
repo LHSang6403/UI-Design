@@ -78,19 +78,19 @@ const FoodDialog: React.FC<FoodDialogProps> = ({
                 className="rounded-xl"
               ></Image>
               <div className="text-start">
-                <h4 className="title text-xl font-bold">Cheese Burger</h4>
-                <p className="description text-slate-400">
+                <h4 className="title text-md font-bold">Cheese Burger</h4>
+                <p className="description text-sm text-slate-400">
                   A cheeseburger features a juicy ground beef patty topped with
                   a melted slice of cheese, typically cheddar, American, or
                   Swiss, served in a soft bun
                 </p>
               </div>
-              <div className="price text-xl font-bold">
+              <div className="price text-md font-bold">
                 <span>$3.88</span>
               </div>
             </div>
           </DialogHeader>
-          <div className="form-group max-h-[30vh] overflow-y-scroll">
+          <div className="form-group flex max-h-[30vh] flex-col gap-y-2 overflow-y-scroll">
             <div className="form-control">
               <Label className="font-semibold">Select</Label>
               <RadioGroup defaultValue="comfortable">
@@ -182,7 +182,7 @@ const FoodDialog: React.FC<FoodDialogProps> = ({
               <Label className="instruction mr-4 font-semibold">
                 Special instructions
               </Label>
-              <span className="text-slate-400">Optional</span>
+              <span className="text-sm text-slate-400">Optional</span>
             </div>
             <Input type="text" placeholder="E.g: No Onions" />
           </div>
@@ -190,7 +190,7 @@ const FoodDialog: React.FC<FoodDialogProps> = ({
             <div className="input-group flex">
               <Button
                 onClick={onDecrement}
-                className="text-[#F17228] hover:bg-white"
+                className="text-xl text-[#F17228] hover:bg-white"
               >
                 -
               </Button>
@@ -202,7 +202,7 @@ const FoodDialog: React.FC<FoodDialogProps> = ({
               />
               <Button
                 onClick={onIncrement}
-                className="text-[#F17228] hover:bg-white"
+                className="text-xl text-[#F17228] hover:bg-white"
               >
                 +
               </Button>
@@ -217,7 +217,10 @@ const FoodDialog: React.FC<FoodDialogProps> = ({
       {/* Shopping Cart Dialog */}
       <ShoppingCartDialog
         isOpen={isShoppingCartDialogOpen}
-        onClose={() => setShoppingCartDialogOpen(false)} count1={count1} onIncrement={inc} onDecrement={dec}
+        onClose={() => setShoppingCartDialogOpen(false)}
+        count1={count1}
+        onIncrement={inc}
+        onDecrement={dec}
       />
     </>
   );

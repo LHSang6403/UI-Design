@@ -40,14 +40,15 @@ export default function Detail() {
 
 function Payment(paymentInfo: any) {
   return (
-    <Card className="flex w-full flex-col py-4 md:px-3 md:py-2">
+    <Card className="flex w-full flex-col px-3 py-2">
       <div className="flex flex-row justify-between">
         <div className="flex flex-col">
           <p className="text-xl font-semibold text-amber-600 md:text-lg sm:text-sm">
             Payment method
           </p>
           <p className="mt-1 text-sm text-gray-500 md:text-xs">
-            {paymentInfo.name}" "{paymentInfo.cardNumber}
+            {paymentInfo.name ?? "Momo"}" "
+            {paymentInfo.cardNumber ?? "**** **** ****"}
           </p>
         </div>
       </div>
@@ -56,7 +57,7 @@ function Payment(paymentInfo: any) {
 }
 function Delivery(deliveryInfo: any) {
   return (
-    <Card className="flex w-full flex-col py-4 md:px-3 md:py-2">
+    <Card className="flex w-full flex-col px-3 py-2">
       <div className="flex flex-row justify-between">
         <div className="flex flex-col">
           <p className="text-xl font-semibold text-amber-600 md:text-lg sm:text-sm">
@@ -86,7 +87,7 @@ function Delivery(deliveryInfo: any) {
 
 function NeedHelp() {
   return (
-    <Card className="flex w-full flex-col py-4 md:px-3 md:py-2">
+    <Card className="flex w-full flex-col px-3 py-2">
       <p className="mb-4 text-xl font-semibold text-amber-600 md:text-lg sm:text-sm">
         Need help?
       </p>
@@ -113,7 +114,7 @@ function NeedHelp() {
 
 function OrderSummary({ item }: { item: any }) {
   return (
-    <Card className="flex w-full flex-col py-4 md:px-3 md:py-2">
+    <Card className="flex w-full flex-col px-3 py-2">
       <p className="mb-4 text-xl font-semibold text-amber-600 md:text-lg sm:text-sm">
         Order Summary
       </p>
