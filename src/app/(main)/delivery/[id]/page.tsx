@@ -1,9 +1,10 @@
 'use client'
 import SearchBar from "@/components/Search/SearchBar";
-import useHistory from "@/zustand/useHistory";
 import { MapPin, MoveUpRight, OctagonAlertIcon, Truck } from "lucide-react";
+import useHistory from "@/zustand/useHistory";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardDescription, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+import { DropdownMenuCancel } from "@/components/DeliveryComponent/Dropdown"
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,15 +17,11 @@ export default function Detail() {
             <div className="w-full flex flex-row justify-between items-center m-auto">
                 <p className='text-amber-600 text-base md:text-sm sm:text-sx'>Order ID: {item.id}</p>
                 <div className="flex flex-row space-x-5">
-                    <Button className="flex items-center space-x-2 w-full sm:w-auto h-fit drop-shadow-lg shadow-yellow-400 bg-amber-500 text-white py-2 px-4 rounded-md hover:bg-amber-600 transition-colors text-sm sm:text-base">
-                        <span className="text-base md:text-sm sm:text-sx">Action</span>
-                        <OctagonAlertIcon className="w-5 h-5" />
-                    </Button>
+                    <DropdownMenuCancel />
                     <Button className="flex items-center space-x-2 w-full sm:w-auto h-fit bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition-colors text-sm sm:text-base">
                         <span className="text-base md:text-sm sm:text-sx">Track Order</span>
                         <MapPin className="w-5 h-5" />
                     </Button>
-
                 </div>
             </div>
             <div className="w-full flex flex-row justify-start m-auto text-base space-x-4">
