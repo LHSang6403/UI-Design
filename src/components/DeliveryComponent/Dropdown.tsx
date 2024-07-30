@@ -24,8 +24,8 @@ export function DropdownMenuCancel() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="flex h-fit w-full items-center space-x-2 rounded-md bg-amber-500 px-4 py-2 text-sm text-white shadow-yellow-400 drop-shadow-lg transition-colors hover:bg-amber-600 sm:w-auto sm:text-base">
-          <span className="sm:text-sx text-base md:text-sm">Action</span>
+        <Button className="flex h-fit w-full items-center space-x-2 md:space-x-0 rounded-md bg-amber-500 px-4 py-2 text-sm text-white shadow-yellow-400 drop-shadow-lg transition-colors hover:bg-amber-600 sm:w-auto sm:text-xs">
+          <span className="text-sm md:md:hidden">Action</span>
           <OctagonAlertIcon className="h-5 w-5" />
         </Button>
       </DropdownMenuTrigger>
